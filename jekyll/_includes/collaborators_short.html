@@ -1,0 +1,26 @@
+{% assign filteredcollaborators = include.collaborators %}
+
+<div id="member-list">
+  {% comment %}
+  Here, each two members are wrapped in a row.
+  {% endcomment %}
+  {% assign counter = 1 | modulo:3 %}
+  {% for collaborator in filteredcollaborators %}
+  {% if counter == 1 %}
+  <div class="row">
+  {% endif %}
+  {% assign counter = counter | plus:1 | modulo:3 %}
+  <div class="member">
+    <img class="member-image" src="{{ site.baseurl }}/assets/collaborators/{{ collaborator.identifier }}/{{ collaborator.identifier }}.jpg">
+    <span class="member-name"><a href="{{ site.baseurl }}/collaborators/{{ collaborator.identifier }}.html">{{ collaborator.academic_title }} {{ collaborator.name }}</a></span>
+    <span class="member-position">{{ collaborator.affiliation }}</span>
+    
+  </div>
+  {% if counter == 1 %}
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% if counter == 0 %}
+  </div>
+  {% endif %}
+  </div>

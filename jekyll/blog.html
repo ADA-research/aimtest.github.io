@@ -1,0 +1,54 @@
+---
+layout: default
+title: Blog of the Chair for AI Methodology at RWTH Aachen University
+---
+
+<div class="wrapper">
+  <div class="box">
+
+  <h1>AIM News</h1>
+
+  {% for post in site.posts %}
+
+  <article class="post">
+    <div class="post_author">
+    {% assign author_data = site.members | where: 'identifier', post.author %}
+    <!--img src="/assets/images/profiles/{{ author_data[0].identifier }}.jpg" alt="Photo of blog post author {{ author_data[0].name }}"-->
+    {{ post.date | date_to_string }}
+    by {{ author_data[0].name }}
+    </div>
+    <div class="post_content">
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      {{ post.excerpt }}
+
+      {% if post.has_excerpt %}
+      <p><a href="{{ post.url }}">Read entire post ...</a></p>
+      {% endif %}
+    </div>
+  </article>
+
+  {% endfor %}
+
+
+  <!-- Pagination links -->
+
+  <!--div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">
+        Previous
+      </a>
+    {% else %}
+      <span class="previous">Previous</span>
+    {% endif %}
+    <span class="page_number ">
+      Page: {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% else %}
+      <span class="next ">Next</span>
+    {% endif %}
+  </div-->
+  </div>
+</div>
+
