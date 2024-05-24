@@ -1,7 +1,7 @@
 ---
 identifier: pkerschke
 short_name: Pascal
-name: Pascal Kerschke
+name: Pascal Kerschke (Example)
 surname: Kerschke
 academic_title: Prof. Dr.
 position: Professor
