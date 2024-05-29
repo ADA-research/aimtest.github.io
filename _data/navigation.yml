@@ -2,17 +2,11 @@
   link: /research.html
 - name: Education
   link: /education.html
-- name: Theses
-  link: /thesis.html
 - name: People
   link: /people.html
-- name: Jobs
-  link: /jobs.html
-- name: Media
-  link: /media.html
-- name: Events
-  link: /events.html
-- name: News
+- name: Blog
   link: /blog.html
 - name: Contact
   link: /contact.html
+- name: Publications
+  link: /publications.html
